@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signup - Langfuse Dashboard</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="container" style="justify-content:center">
+    <div class="card" style="max-width:400px; width:100%; padding:30px;">
+      <h2 style="margin-top:0; text-align:center;">Create Account</h2>
+
+      {% if error %}
+      <div style="color:red; margin-bottom:10px; text-align:center;">{{ error }}</div>
+      {% endif %}
+
+      <form action="/auth/signup" method="POST">
+        <label>Username
+          <input name="username" required />
+        </label>
+
+        <label>Password
+          <input type="password" name="password" required />
+        </label>
+
+        <button class="btn" style="width:100%; margin-top:16px;">Sign Up</button>
+      </form>
+
+      <div style="margin-top:12px; font-size:14px; text-align:center;">
+        Already have an account? <a href="/login">Login</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

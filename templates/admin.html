@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="container" style="justify-content:center">
+    <div class="card" style="max-width:500px; padding:30px;">
+      <h2>Admin Panel</h2>
+
+      <p>Welcome, {{ user.username }} (Admin)</p>
+
+      <a href="/" class="btn">Go to Dashboard</a>
+      <a href="/logout" class="btn secondary" style="margin-left:10px;">Logout</a>
+    </div>
+  </div>
+</body>
+</html>

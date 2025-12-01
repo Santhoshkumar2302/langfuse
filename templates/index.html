@@ -1,0 +1,71 @@
+<!-- templates/index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Langfuse Dashboard</title>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- custom CSS -->
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h2>Filters</h2>
+      <label>User ID
+        <input id="user-filter" placeholder="e.g. alice" />
+      </label>
+      <label>Last N days
+        <input id="last-n-days" type="number" value="30" min="1" />
+      </label>
+      <label>Max rows
+        <input id="max-rows" type="number" value="1000" min="10" />
+      </label>
+      <button id="apply-btn" class="btn">Apply</button>
+      <button id="refresh-btn" class="btn secondary">Refresh</button>
+      <hr/>
+      <div id="last-updated" class="muted">—</div>
+    </aside>
+
+    <main class="main">
+      <header class="header">
+        <h1>Langfuse Events Dashboard</h1>
+      </header>
+
+      <section class="metrics" id="metrics">
+        <!-- metric cards injected by JS -->
+      </section>
+
+      <section class="cards-row">
+  <div class="card chart-card">
+    <h3>Cost Over Time</h3>
+    <div class="chart-container">
+      <canvas id="costChart"></canvas>
+    </div>
+  </div>
+
+  <div class="card chart-card">
+    <h3>Events by User</h3>
+    <div class="chart-container">
+      <canvas id="userChart"></canvas>
+    </div>
+  </div>
+</section>
+
+
+      <section class="card">
+        <h3>Raw Events (table)</h3>
+        <div id="table-wrap"></div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- frontend JS -->
+  <script src="/static/dashboard.js"></script>
+</body>
+</html>
