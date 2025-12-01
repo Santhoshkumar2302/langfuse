@@ -1,0 +1,41 @@
+/* static/style.css */
+:root{
+  --bg:#f5f7fb;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --accent:#2563eb;
+  --accent2:#ff8a00;
+}
+
+*{box-sizing:border-box}
+body{
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  margin:0; background:var(--bg); color:#111827;
+}
+.container{display:flex; min-height:100vh; gap:20px; padding:20px;}
+.sidebar{
+  width:260px; background:var(--card); padding:18px; border-radius:10px; box-shadow:0 6px 20px rgba(16,24,40,0.06);
+}
+.sidebar h2{margin:0 0 12px 0; font-size:18px}
+.sidebar label{display:block; margin-bottom:10px; font-size:13px}
+.sidebar input[type="text"], .sidebar input[type="number"]{
+  width:100%; padding:8px 10px; margin-top:6px; border-radius:6px; border:1px solid #e5e7eb;
+}
+.btn{display:inline-block; margin-top:8px; padding:8px 12px; background:var(--accent); color:white; border:none; border-radius:8px; cursor:pointer}
+.btn.secondary{background:transparent; color:var(--accent); border:1px solid rgba(37,99,235,0.12)}
+
+.main{flex:1}
+.header h1{margin:0 0 12px 0}
+.metrics{display:flex; gap:12px; margin-bottom:18px}
+.metric-card{flex:1; background:linear-gradient(90deg,#ffffff,#ffffff); border-radius:8px; padding:14px; box-shadow:0 6px 18px rgba(16,24,40,0.04)}
+.metric-label{font-size:12px; color:var(--muted)}
+.metric-value{font-size:22px; margin-top:6px; font-weight:600}
+
+.cards-row{display:flex; gap:12px; margin-bottom:18px}
+.card{background:var(--card); padding:12px; border-radius:10px; flex:1; box-shadow:0 6px 20px rgba(16,24,40,0.04)}
+
+#table-wrap{max-height:340px; overflow:auto; padding-top:6px}
+.table{width:100%; border-collapse:collapse}
+.table th, .table td{padding:8px 10px; border-bottom:1px solid #eef2f7; font-size:13px}
+.table th{position:sticky; top:0; background:linear-gradient(#fff,#fff)}
+.muted{color:var(--muted); font-size:12px; margin-top:8px}
